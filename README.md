@@ -1,11 +1,11 @@
 <p align="center">
-<img src="https://static.wikia.nocookie.net/kenja-no-mago/images/8/85/Sizilien_von_klode_1.jpg/revision/latest/top-crop/width/300/height/300?cb=20190417164406" width="128" height="128"/>
+<a href="https://ibb.co/xgJpwB5"><img src="https://i.ibb.co/YdpzJ1j/Venom-Bot.jpg" alt="Venom-Bot" border="0"></a>
 </p>
 <p align="center">
-<a href="#"><img title="Whatsapp-Bot" src="https://img.shields.io/badge/Termux Whatsapp Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="Venom-Bot" src="https://img.shields.io/badge/Termux Whatsapp Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/mhankbarbar"><img title="Author" src="https://img.shields.io/badge/Author-mhankbarbar-red.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/Venom-ofc"><img title="Criador" src="https://img.shields.io/badge/Author-mhankbarbar-red.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 <a href="https://github.com/mhankbarbar/followers"><img title="Followers" src="https://img.shields.io/github/followers/mhankbarbar?color=blue&style=flat-square"></a>
@@ -16,22 +16,21 @@
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/MAINTENED-NO-blue.svg"</a>
 </p>
 
-## Clone this project
+## Copie e color os comandos no termux
 
 ```bash
-> git clone https://github.com/MhankBarBar/termux-wabot
+> git clone https://github.com/Venom-ofc/termux-botvenom
 ```
 
-## Install the dependencies:
-Before running the below command, make sure you're in the project directory that
-you've just cloned!!
+## Instale as dependências: Antes de executar o comando abaixo,
+ certifique-se de estar no diretório do projeto que você acabou de clonar !!
 
 ```bash
-> cd termux-wabot
+> cd termux-botvenom
 > bash install.sh
 ```
 
-### Usage
+### Use o para iniciar
 ```bash
 > npm start
 ```
@@ -40,14 +39,14 @@ you've just cloned!!
 ```json
 {
 	"prefix": ".",
-	"ownerNumber": "62858xxxxx",
-	"apiKey": "Your ApiKey here"
+	"ownerNumber": "coloque seu número",
+	"apiKey": "coloque sua apikey"
 }
 ```
 
-## Features
+## Recursos
 
-| Sticker Creator |                Feature           |
+| Figurinha |                Recursos           |
 | :-----------: | :--------------------------------: |
 |       ✅       | Send Photo with Caption          |
 |       ✅       | Reply A Photo                    |
@@ -55,7 +54,7 @@ you've just cloned!!
 |       ✅       | Send Video or GIF with Caption   |
 |       ✅       | Reply A Sticker ( sticker to image ) |
 
-| Other  |                     Feature                     |
+| Outros  |                     Recursos                     |
 | :------------: | :---------------------------------------------: |
 |       ✅        |   Get a random meme             |
 |       ✅        |   Text to speech                |
@@ -64,30 +63,30 @@ you've just cloned!!
 |       ✅        |   Url2Img ( Screeenshot Web )   |
 |       ✅        |   Simsimi		                |
 
-| Group  |                     Feature               |
+| Grupos  |                     Recursos               |
 | :-----------: | :--------------------------------: |
-|       ✅        |   Tagall/Mentionall member       |
-|       ✅        |   Tagall2/Mentionall member       |
-|       ✅        |   Tagall3/Mentionall member       |
-|       ✅        |   Kick Member Group	             |
-|       ✅        |   Add Member Group	             |
-|       ✅        |   Get List Admins Group          |
-|       ✅        |   Get Group Invite Link          |
-|       ✅        |   Bot leave the group            |
+|       ✅        |   tagall/membros     |
+|       ✅        |   tagall2/membros       |
+|       ✅        |   tagall3/membros      |
+|       ✅        |   Kick remover membros             |
+|       ✅        |   Add Membros             |
+|       ✅        |   ver lista de adms     |
+|       ✅        |   Ver link do grupo          |
+|       ✅        |   Bot Saira do grupo            |
 
-| Owner Bot  |                     Feature           |
+| Dono do Bot  |                     Recursos           |
 | :-----------: | :--------------------------------: |
-|       ✅        |   Set Prefix                     |
-|       ✅        |   Broadcast                      |
-|       ✅        |   Clear All Chats                |
+|       ✅        |   muda prefixo                     |
+|       ✅        |   transmissão                      |
+|       ✅        |   limpar chats             |
 
-## Special Thanks to
+## Agradecimento para
 * <a href="https://github.com/adiwajshing/Baileys"><img alt="GitHub" src="https://img.shields.io/badge/adiwajshing/Baileys%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a>
 
-## Group
+## Grupo bot wa members
 * <a href="https://chat.whatsapp.com/KHHxGNw2NQ1KmVbgEQE9nm"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
-### Donate
+### ajude no canal
 * <a href="https://saweria.co/donate/mhankbarbar"><img alt="Saweria" src="https://img.shields.io/badge/Saweria-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" /></a>
 * <a href="https://paypal.me/mhankbarbar"><img alt="Paypal" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" /></a>
 
