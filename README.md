@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://ibb.co/xgJpwB5"><img src="https://i.ibb.co/YdpzJ1j/Venom-Bot.jpg" alt="Venom-Bot" border="0"></a>
+<a href="https://ibb.co/G7PZnyz"><img src="https://i.ibb.co/xh5nXWx/venombot.png" alt="venombot" border="0"></a>
 </p>
 <p align="center">
 <a href="#"><img title="Venom-Bot" src="https://img.shields.io/badge/Termux Whatsapp Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
@@ -84,9 +84,8 @@
 * <a href="https://github.com/adiwajshing/Baileys"><img alt="GitHub" src="https://img.shields.io/badge/adiwajshing/Baileys%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a>
 
 ## Grupo bot wa members
-* <a href="https://chat.whatsapp.com/KHHxGNw2NQ1KmVbgEQE9nm"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+* <a href="https://chat.whatsapp.com/LTyM3PdbIw3CyLmy0wF9EQ"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ### ajude no canal
-* <a href="https://saweria.co/donate/mhankbarbar"><img alt="Saweria" src="https://img.shields.io/badge/Saweria-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" /></a>
-* <a href="https://paypal.me/mhankbarbar"><img alt="Paypal" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" /></a>
+* <a href="https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ"><img alt="Saweria" src="https://img.shields.io/badge/Saweria-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" /></a>
 
