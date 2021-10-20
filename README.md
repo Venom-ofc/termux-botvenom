@@ -18,10 +18,22 @@
 
 ## Copie e color os comandos no termux
 
-```bash
+```bash 
+> termux-setup-storage
+> apt update && apt upgrade && pkg install git -y && pkg install nodejs -y && pkg install ffmpeg -y && pkg install webp -y
 > git clone https://github.com/Venom-ofc/termux-botvenom
 ```
 
+## caso queira o aqruivo do bot 
+
+```bash 
+> mv -f termux-botvenom /sdcard 
+```
+## caso queira instalar o bot na memória do seu aparelho 
+
+```bash
+> cd /sdcard/termux-botvenom && npm start
+```
 ## Instale as dependências: Antes de executar o comando abaixo,
  certifique-se de estar no diretório do projeto que você acabou de clonar !!
 
