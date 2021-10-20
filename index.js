@@ -236,6 +236,11 @@ async function starts() {
 			switch(command) {
 				case 'help':
 				case 'menu':
+                                        reply('👋bemvindo a script de bot by Venom Mods▪︎
+▪︎♡caso queira ajuda na base chama no zap♡▪︎
+︎▪︎☎ctt:️ https://wa.me/+37122291651 ▪︎
+︎▪︎🇧🇷meu canal: https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ ▪︎▪︎▪︎▪︎/*
+▪︎⚠️︎︎Base feita por Venom mods⚠️▪︎')
 					client.sendMessage(from, help(prefix), text)
 					break
 				case 'info':
@@ -328,6 +333,7 @@ async function starts() {
 					break
 				case 'figu':
 				case 'sticker':
+                                        reply(mess.wait)
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -344,7 +350,7 @@ async function starts() {
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('BY:VENOMBOT', authorname)} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 									fs.unlinkSync(media)	
@@ -400,7 +406,7 @@ async function starts() {
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
 								if (err) return reply(mess.error.stick)
-								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ranw} -o ${ranw}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('BY:VENOMBOT', authorname)} ${ranw} -o ${ranw}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
 									fs.unlinkSync(ranw)
