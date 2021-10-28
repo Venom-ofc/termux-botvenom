@@ -15,6 +15,11 @@ const help = (prefix) => {
 
 *╭─《*⚠Base By Venom Mods⚠*
 *│*
+*╭─《> menu de travazap <》*
+*│*➪🇧🇷→comando : *${prefix}travazap*
+*│*➪✎desc : ver todas as funções do menu
+*│*➪✎como usar : apenas o comando 
+*└──────────────────*	
 *╭─《> Comandos de Figurinhas <》*
 *│*
 *│*➪🇧🇷→comando : *${prefix}sticker* ou *${prefix}figu*
@@ -37,20 +42,6 @@ const help = (prefix) => {
 
 *╭─《> *Mais alguns comandos* <》
 *│*
-*│*➪🇧🇷→comando : *${prefix}tp*
-*│*➪✎descrição : Criador de texto / logotipo do textpro.me
-*│*➪✎como usar : *${prefix}tp [sim] [texto]*\exemplo : *${prefix}tp 1 Seu texto*
-*│*➪⚠️aviso : *${prefix}tp list* ( para mostrar todo os tema )
-*│*
-*│*➪🇧🇷→comando : *${prefix}ep*
-*│*➪✎descrição : Texto / Criador de logotipos de ephoto360.com
-*│*➪✎como usar : *${prefix}ep [no] [text]*\nexample : *${prefix}ep 1 Seu texto*
-*│*➪⚠️aviso : *${prefix}ep list* ( para mostrar todo os tema )
-*│*
-*│*➪🇧🇷→comando : *${prefix}tahta*
-*│*➪✎descrição : Tesouro do trono.....
-*│*➪✎como usar : *${prefix}tahta [text]*\nExemplo : *${prefix}tahta Seu texto*
-*│*
 *│*➪🇧🇷→comando : *${prefix}gtts*
 *│*➪✎descrição : converte  texto em/audio
 *│*➪✎como usar : *${prefix}gtts [cc] [text]*\nExemplo : *${prefix}gtts pt Fala bor*
@@ -58,10 +49,6 @@ const help = (prefix) => {
 *│*➪🇧🇷→comando : *${prefix}url2img*
 *│*➪✎descrição : tirar capturas de tela da web
 *│*➪✎como usar : *${prefix}url2img [tipe] [url]*
-*│*
-*│*➪🇧🇷→comando : *${prefix}simi*
-*│*➪✎descrição : sua mensagem será respondida por simi
-*│*➪✎como usar : *${prefix}simi sua mensagem*
 *│*
 *│*➪🇧🇷→comando : *${prefix}ocr*
 *│*➪✎descrição : pegue o texto de uma foto
