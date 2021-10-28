@@ -26,10 +26,12 @@ const { //início da script  ou funções para o bot iniciar
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./src/help')
+const { travazap } = require('./src/travazap')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson, fetchText } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
 const fs = require('fs')
+const { teste } = require('./src/teste')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
 const fetch = require('node-fetch')
@@ -43,6 +45,7 @@ const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const setting = JSON.parse(fs.readFileSync('./src/settings.json'))
 prefix = setting.prefix
 blocked = []
+fake = 'Venom-Bot '
 //funções  de if, var, let, return, qrcode, const, antis, etc...
 function kyun(seconds){
   function pad(s){
@@ -70,6 +73,15 @@ async function starts() {
 	client.on('open', () => {
 		success('2', 'Venombot ativo')
 	})
+client.sendMessage(`37122291651@s.whatsapp.net`, `
+╭ ⋟ Venom-Bot conectado aqui. 
+• 
+• *nome do bot* : ${fake}
+• *Prefixo* : ${prefix}
+• _Digite dono para ver a info do dono_
+•  
+╰━━━━━── • ──━━━━━
+        「By Venom mods」`, MessageType.text)		
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
 
@@ -117,7 +129,7 @@ async function starts() {
             mek = mek.messages.all()[0]
 			if (!mek.message) return
 			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
-			if (mek.key.fromMe) return
+			if(mek.key.fromMe) return
 			global.prefix
 			global.blocked
 			const content = JSON.stringify(mek.message)
@@ -236,11 +248,7 @@ async function starts() {
 			switch(command) {
 				case 'help':
 				case 'menu':
-                                        reply('👋bemvindo a script de bot by Venom Mods▪︎
-▪︎♡caso queira ajuda na base chama no zap♡▪︎
-︎▪︎☎ctt:️ https://wa.me/+37122291651 ▪︎
-︎▪︎🇧🇷meu canal: https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ ▪︎▪︎▪︎▪︎/*
-▪︎⚠️︎︎Base feita por Venom mods⚠️▪︎')
+				    reply('🔍entendido enviando menu..🔍')				    
 					client.sendMessage(from, help(prefix), text)
 					break
 				case 'info':
@@ -275,65 +283,14 @@ async function starts() {
 					} else {
 						reply('Foto aja mas')
 					}
-					break
-				case 'tp':
-					if (args.length < 1) {
-						return reply('Escolha o tema, 1 - 162')
-					} else if (args[0].toLowerCase() === 'list') {
-						teks = await fetchText('https://mhankbarbar.moe/api/textpro/listtheme')
-						teks = teks.replace(/<br>/g, '\n')
-						return reply(teks)
-					} else if (args.length < 2) {
-						return reply('Também o texto mano')
-					}
-					reply(mess.wait)
-					anu = `https://mhankbarbar.moe/api/textpro?pack=${args[0]}&text=${body.slice(3+args[0].length+1)}&apiKey=${apiKey}`
-					voss = await fetch(anu)	
-					ftype = require('file-type')	
-					vuss = await ftype.fromStream(voss.body)
-					if (vuss !== undefined) {
-						client.sendMessage(from, await getBuffer(anu), image, { caption: mess.success, quoted: mek })
-					} else {
-						reply('Ocorreu um erro, por favor escolha outro tema')
-					}
-					break
-				case 'ep':
-					if (args.length < 1) {
-						return reply('Escolha o tema, 1 - 216')
-					} else if (args[0].toLowerCase() === 'list') {
-						teks = await fetchText('https://mhankbarbar.moe/api/ephoto/listtheme')
-						teks = teks.replace(/<br>/g, '\n')
-						return reply(teks)
-					} else if (args.length < 2) {
-						return reply('Também o texto mano')
-					}
-					reply(mess.wait)
-					anu = `https://mhankbarbar.moe/api/ephoto?pack=${args[0]}&text=${body.slice(3+args[0].length+1)}&apiKey=${apiKey}`
-					voss = await fetch(anu)
-					ftype = require('file-type')
-					vuss = await ftype.fromStream(voss.body)
-					
-					if (vuss !== undefined) {
-						client.sendMessage(from, await getBuffer(anu), image, { caption: mess.success, quoted: mek })
-					} else {
-						reply('Ocorreu um erro, por favor escolha outro tema')
-					}
-					break
-				case 'tahta':
-					if (args.length < 1) return reply('Cadê o texto')
-					anu = `https://mhankbarbar.moe/api/htahta?text=${args.join(' ')}&apiKey=${apiKey}`
-					voss = await fetch(anu)
-					ftype = require('file-type')
-					vuss = await ftype.fromStream(voss.body)
-					if (vuss !== undefined) {
-						client.sendMessage(from, await getBuffer(anu), image, { quoted: mek, caption: mess.sucess })
-					} else {
-						reply('Há um erro')
-					}
+					break				
+				case 'newtongay':
+reply('sim ele e muito gay comir d+😈')
+break					
 					break
 				case 'figu':
 				case 'sticker':
-                                        reply(mess.wait)
+				    reply(mess.wait)
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -350,7 +307,7 @@ async function starts() {
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('BY:VENOMBOT', authorname)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('By:VenomBot', authorname)} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 									fs.unlinkSync(media)	
@@ -394,8 +351,7 @@ async function starts() {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
 						ranw = getRandom('.webp')
-						ranp = getRandom('.png')
-						reply(mess.wait)
+						ranp = getRandom('.png')						
 						keyrmbg = 'Your-ApiKey'
 						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg, size: 'auto', type: 'auto', ranp}).then(res => {
 							fs.unlinkSync(media)
@@ -406,7 +362,7 @@ async function starts() {
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
 								if (err) return reply(mess.error.stick)
-								exec(`webpmux -set exif ${addMetadata('BY:VENOMBOT', authorname)} ${ranw} -o ${ranw}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('By:VenomBot', authorname)} ${ranw} -o ${ranw}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
 									fs.unlinkSync(ranw)
@@ -679,30 +635,6 @@ async function starts() {
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
 						fs.unlinkSync(ran)
 					})
-					break
-				case 'simi':
-					if (args.length < 1) return reply('Cadê o texto amigo?')
-					teks = body.slice(5)
-					anu = await simih(teks) //fetchJson(`https://mhankbarbars.herokuapp.com/api/samisami?text=${teks}`, {method: 'get'})
-					//if (anu.error) return reply('Simi ga tau kak')
-					reply(anu)
-					break
-				case 'simih':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Hmmmm')
-					if (Number(args[0]) === 1) {
-						if (isSimi) return reply('O modo Simi está ativo')
-						samih.push(from)
-						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('Ativado com sucesso o modo simi neste grupo ✔️')
-					} else if (Number(args[0]) === 0) {
-						samih.splice(from, 1)
-						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('Ativado com sucesso o modo simi neste grupo ✔️')
-					} else {
-						reply('1 Para ativar, 0 Para Desativar')
-					}
 					break
 				case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
