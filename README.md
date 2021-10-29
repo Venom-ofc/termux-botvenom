@@ -17,7 +17,6 @@
 </p>
 
 ## Copie e color os comandos no termux
-
 ```bash 
 > termux-setup-storage
 > apt update && apt upgrade && pkg install git -y && pkg install nodejs -y && pkg install ffmpeg -y && pkg install webp -y
@@ -36,16 +35,17 @@
 ```bash
 > npm start
 ```
-## caso queira o aqruivo do bot 
 
+## caso queira o aqruivo do bot 
 ```bash 
 > mv -f termux-botvenom /sdcard 
 ```
-## caso queira instalar o bot na memória do seu aparelho 
 
+## caso queira instalar o bot na memória do seu aparelho 
 ```bash
 > cd /sdcard/termux-botvenom && npm start
 ```
+
 ### Settings
 ```json
 {
