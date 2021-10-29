@@ -24,16 +24,6 @@
 > git clone https://github.com/Venom-ofc/termux-botvenom
 ```
 
-## caso queira o aqruivo do bot 
-
-```bash 
-> mv -f termux-botvenom /sdcard 
-```
-## caso queira instalar o bot na memória do seu aparelho 
-
-```bash
-> cd /sdcard/termux-botvenom && npm start
-```
 ## Instale as dependências: Antes de executar o comando abaixo,
  certifique-se de estar no diretório do projeto que você acabou de clonar !!
 
@@ -46,7 +36,16 @@
 ```bash
 > npm start
 ```
+## caso queira o aqruivo do bot 
 
+```bash 
+> mv -f termux-botvenom /sdcard 
+```
+## caso queira instalar o bot na memória do seu aparelho 
+
+```bash
+> cd /sdcard/termux-botvenom && npm start
+```
 ### Settings
 ```json
 {
