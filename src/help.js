@@ -15,11 +15,6 @@ const help = (prefix) => {
 
 *╭─《*⚠Base By Venom Mods⚠*
 *│*
-*╭─《> menu de travazap <》*
-*│*➪🇧🇷→comando : *${prefix}travazap*
-*│*➪✎desc : ver todas as funções do menu
-*│*➪✎como usar : apenas o comando 
-*└──────────────────*	
 *╭─《> Comandos de Figurinhas <》*
 *│*
 *│*➪🇧🇷→comando : *${prefix}sticker* ou *${prefix}figu*
@@ -113,7 +108,7 @@ const help = (prefix) => {
 
 *╭─《*⚠Base By Venom Mods⚠*
 *│*
-*│*➪→ *💎Venombot-ofc💎*
+*│*➪→ *💎Venombot-V01💎*
 *│*
 *└──────────────────*
 ️`
