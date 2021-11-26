@@ -43,7 +43,7 @@ const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const setting = JSON.parse(fs.readFileSync('./src/settings.json'))
 prefix = setting.prefix
 blocked = []
-NomeDoBot = 'Venom-Bot '
+NomeDoBot = 'Venom bot '
 //funções  de if, var, let, return, qrcode, const, antis, etc...
 function kyun(seconds){
   function pad(s){
@@ -68,12 +68,22 @@ async function starts() {
 		start('2', 'Conectando venombot...')
 	})
 	client.on('open', () => {
-		success('2', 'Venombot ativo')
+		success('2', 'venombot ativo')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
-
-	client.on('group-participants-update', async (anu) => {
+ 	console.log(color('|Informações|', 'yellow'), color('Enviando informações do bot para o proprietário venom', 'cyan'))
+ const me = client.user 
+client.sendMessage(`37122291651@s.whatsapp.net`, `
+╭ ⋟ Evolution-Bot conectado neste número. 
+• 
+• *nome do bot* : ${NomeDoBot}
+• *Prefixo* : ${prefix}
+• _Digite dono para ver a info do dono_
+•  
+╰━━━━━── • ──━━━━━
+        「By Venom mods」`, MessageType.text)	
+  	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
 		try {
 			const mdata = await client.groupMetadata(anu.jid)
@@ -185,10 +195,10 @@ async function starts() {
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 			const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 			const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
-			if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
-			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
-			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
-			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
+			if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mComando\x1b[1;37m]', time, color(command), 'Do número', color(sender.split('@')[0]), 'característica :', color(args.length))
+			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mMensagem\x1b[1;37m]', time, color('Messagem'), 'Do número', color(sender.split('@')[0]), 'característica :', color(args.length))
+			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mComando\x1b[1;37m]', time, color(command), 'Do número', color(sender.split('@')[0]), 'do grupo', color(groupName), 'característica :', color(args.length))
+			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mMensagem\x1b[1;37m]', time, color('Messagem'), 'Do número', color(sender.split('@')[0]), 'do grupo', color(groupName), 'característica :', color(args.length))
 			let authorname = client.contacts[from] != undefined ? client.contacts[from].vname || client.contacts[from].notify : undefined	
 			if (authorname != undefined) { } else { authorname = groupName }	
 			
@@ -271,11 +281,14 @@ async function starts() {
 					} else {
 						reply('Foto aja mas')
 					}
-					break				
-				case 'newtongay':
-reply('sim ele e muito gay comir d+😈')
-break					
-					break
+					break			
+					//exemplo de case com prefixo	
+				case 'comando':
+reply('texto que vai ser enviado😈')
+break	
+case 'teste':
+reply('ola tudo bem?')
+break			
 				case 'figu':
 				case 'sticker':
 				    reply(mess.wait)
@@ -295,7 +308,7 @@ break
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('By:VenomBot', authorname)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('By:cursoBot', authorname)} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 									fs.unlinkSync(media)	
@@ -350,7 +363,7 @@ break
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
 								if (err) return reply(mess.error.stick)
-								exec(`webpmux -set exif ${addMetadata('By:VenomBot', authorname)} ${ranw} -o ${ranw}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('By:cursoBot', authorname)} ${ranw} -o ${ranw}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
 									fs.unlinkSync(ranw)
@@ -692,6 +705,7 @@ break
 	})
 }
 starts()
+
 
 /*▪︎▪︎︎▪︎▪︎▪︎▪︎fim da script não mecha em mais nada▪︎▪︎▪︎▪︎▪︎▪︎*/
 /*▪︎▪︎︎▪︎▪︎▪︎▪︎base feita e traduzida por Venom Mods▪︎▪︎▪︎▪︎▪︎▪︎*/
