@@ -11,7 +11,7 @@ const help = (prefix) => {
 
 ➪⚠ ️ _https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ_
 
-➪⚠  _https://wa.me/+37122291651_
+➪⚠  _https://wa.me/+559784388524_
 
 *╭─《*⚠Base By Venom Mods⚠*
 *│*
