@@ -1,5 +1,5 @@
 const help = (prefix) => {
-	return `╭─《→ 👋Olá bemvindo ao menu\n*│💎Venombot-ofc💎*
+	return `╭─《→ 👋Olá bemvindo ao menu\n*│💎nome do seu bot💎*
  *└────────\n	
  *╭─《→ *⚠️Créditos⚠* 》
  
@@ -40,10 +40,6 @@ const help = (prefix) => {
 *│*➪🇧🇷→comando : *${prefix}gtts*
 *│*➪✎descrição : converte  texto em/audio
 *│*➪✎como usar : *${prefix}gtts [cc] [text]*\nExemplo : *${prefix}gtts pt Fala bor*
-*│*
-*│*➪🇧🇷→comando : *${prefix}url2img*
-*│*➪✎descrição : tirar capturas de tela da web
-*│*➪✎como usar : *${prefix}url2img [tipe] [url]*
 *│*
 *│*➪🇧🇷→comando : *${prefix}ocr*
 *│*➪✎descrição : pegue o texto de uma foto
@@ -108,7 +104,7 @@ const help = (prefix) => {
 
 *╭─《*⚠Base By Venom Mods⚠*
 *│*
-*│*➪→ *💎Venombot-V01💎*
+*│*➪→ *💎Nome do Seu bot💎*
 *│*
 *└──────────────────*
 ️`
