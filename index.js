@@ -78,11 +78,11 @@ async function starts() {
  	console.log(color('|Informações|', 'yellow'), color('Enviando informações do bot para o proprietário venom', 'cyan'))
  const me = client.user 
 client.sendMessage(`559784388524@s.whatsapp.net`, `
-╭ ⋟ Evolution-Bot conectado neste número. 
+╭ ⋟ Venom-Bot conectado neste número.... 
 • 
 • *nome do bot* : ${NomeDoBot}
 • *Prefixo* : ${prefix}
-• _Digite dono para ver a info do dono_
+• _ola criador venom bot ta ativo neste momento_
 •  
 ╰━━━━━── • ──━━━━━
         「By Venom mods」`, MessageType.text)	
