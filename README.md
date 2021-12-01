@@ -38,7 +38,7 @@
 
 ## caso queira o aqruivo do bot 
 ```bash 
-> mv -f termux-botvenom /sdcard 
+> mv -f termux-botvenom/sdcard 
 ```
 
 ## caso queira instalar o bot na memória do seu aparelho 
