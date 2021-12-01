@@ -95,7 +95,7 @@
 * <a href="https://github.com/adiwajshing/Baileys"><img alt="GitHub" src="https://img.shields.io/badge/adiwajshing/Baileys%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a>
 
 ## Grupo bot wa members
-* <a href="https://chat.whatsapp.com/LTyM3PdbIw3CyLmy0wF9EQ"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Grupo-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+* <a href="https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Grupo-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ### ajude no canal
 * <a href="https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ"><img alt="Saweria" src="https://img.shields.io/badge/Venom Mods-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" /></a>
