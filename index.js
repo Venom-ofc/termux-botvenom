@@ -43,7 +43,7 @@ const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const setting = JSON.parse(fs.readFileSync('./src/settings.json'))
 prefix = setting.prefix
 blocked = []
-NomeDoBot = 'Venom bot '
+NomeDoBot = 'termux-botvemom '
 //funções  de if, var, let, return, qrcode, const, antis, etc...
 function kyun(seconds){
   function pad(s){
@@ -65,26 +65,26 @@ async function starts() {
 
 	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./BarBar.json')
 	client.on('connecting', () => {
-		start('2', 'Conectando venombot...')
+		start('2', 'Conectando termux-botvemom...')
 	})
 	client.on('open', () => {
-		success('2', 'venombot ativo')
+		success('2', 'termux-botvemom ativo')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
-        console.log(color('|Informações|', 'yellow'), color('Entrando no grupo do proprietário venom', 'cyan'))
+       /* console.log(color('|Informações|', 'yellow'), color('Entrando no grupo do proprietário venom', 'cyan'))
         link = 'https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW'
         client.query({ json:["action", "invite", `${link.replace('https://chat.whatsapp.com/','')}`]})
- 	console.log(color('|Informações|', 'yellow'), color('Enviando informações do bot para o proprietário venom', 'cyan'))
+*/ 	console.log(color('|Informações|', 'yellow'), color('Enviando informações do sakura bot para o proprietário venom', 'cyan'))
  const me = client.user 
 client.sendMessage(`559784388524@s.whatsapp.net`, `
-╭ ⋟ Venom-Bot conectado neste número.... 
+╭ ⋟ 🔱𝐛𝐨𝐭 𝐜𝐨𝐧𝐞𝐜𝐭𝐚𝐝𝐨 𝐧𝐞𝐬𝐭𝐞 𝐧𝐮𝐦𝐞𝐫𝐨...🔱. 
 • 
-• *nome do bot* : ${NomeDoBot}
-• *Prefixo* : ${prefix}
-• _ola criador venom bot ta ativo neste momento_
+• *𝐧𝐨𝐦𝐞* : ${NomeDoBot}
+• *𝐩𝐫𝐞𝐟𝐢𝐱𝐨* : ${prefix}
+• 𝐨𝐥𝐚 𝐯𝐞𝐧𝐨𝐦 𝐛𝐨𝐭 𝐧𝐞𝐬𝐭𝐞 𝐦𝐨𝐦𝐞𝐧𝐭𝐨
 •  
-╰━━━━━── • ──━━━━━
+╰━━━━━𝐛𝐲 𝐯𝐞𝐧𝐨𝐦 𝐦𝐨𝐝𝐬━━━━━
         「By Venom mods」`, MessageType.text)	
   	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
@@ -144,6 +144,7 @@ client.sendMessage(`559784388524@s.whatsapp.net`, `
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefix)
+			const venom = args.join(' ')	
 //mess seguiniffca respotas que sera enviada
 			mess = {
 				wait: '⌛ Aguarde.... ⌛',
@@ -400,61 +401,7 @@ break
 					setting.prefix = prefix
 					fs.writeFileSync('./src/settings.json', JSON.stringify(setting, null, '\t'))
 					reply(`Prefixo alterado com sucesso para : ${prefix}`)
-					break
-				
-				case 'yt2mp3':
-					if (args.length < 1) return reply('Cade o URL amigo?')
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://mhankbarbar.moe/api/yta?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `*Título* : ${anu.title}\n*Tamanho* : ${anu.filesize}`
-					thumb = await getBuffer(anu.thumb)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
-					break
-				case 'ytsearch':
-					if (args.length < 1) return reply('O que você está procurando? pau?')
-					anu = await fetchJson(`https://mhankbarbar.moe/api/ytsearch?q=${body.slice(10)}&apiKey=${apiKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = '=================\n'
-					for (let i of anu.result) {
-						teks += `*Título* : ${i.title}\n*Id* : ${i.id}\n*Publicados* : ${i.publishTime}\n*Duração* : ${i.duration}\n*Visualizado* : ${h2k(i.views)}\n=================\n`
-					}
-					reply(teks.trim())
-					break
-				case 'tiktok':
-					if (args.length < 1) return reply('Onde está o url?')
-					if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.error.Iv)
-					reply(mess.wait)
-					anu = await fetchJson(`https://mhankbarbar.moe/api/tiktok?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {quoted: mek})
-					break
-				
-				case 'nulis':
-				case 'tulis':
-					if (args.length < 1) return reply('O que você quer escrever?')
-					teks = body.slice(7)
-					reply(mess.wait)
-					anu = await fetchJson(`https://mhankbarbar.moe/nulis?text=${teks}&apiKey=${apiKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					buff = await getBuffer(anu.result)
-					client.sendMessage(from, buff, image, {quoted: mek, caption: mess.success})
-					break
-				case 'url2img':
-					tipelist = ['desktop','tablet','mobile']
-					if (args.length < 1) return reply('que tipo hum?')
-					if (!tipelist.includes(args[0])) return reply('Digite desktop |tablet|celular')
-					if (args.length < 2) return reply('Onde está o url?')
-					if (!isUrl(args[1])) return reply(mess.error.Iv)
-					reply(mess.wait)
-					anu = await fetchJson(`https://mhankbarbar.moe/api/url2image?tipe=${args[0]}&url=${args[1]}&apiKey=${apiKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					buff = await getBuffer(anu.result)
-					client.sendMessage(from, buff, image, {quoted: mek})
-					break
+					break								
 				case 'tstiker':
 				case 'tsticker':
 					if (args.length < 1) return reply('Onde está o texto hum?')
@@ -525,14 +472,32 @@ break
 						for (let _ of anu) {
 							client.sendMessage(_.jid, buff, image, {caption: `《transmissão by Venombot 》\n\n${body.slice(4)}`})
 						}
-						reply('Transmissão feita')
+						reply('spam enviado com sucesso')
 					} else {
 						for (let _ of anu) {
 							sendMess(_.jid, `《transmissão by Venombot 》\n\n${body.slice(4)}`)
 						}
-						reply('Transmissão feita')
+						reply('spam enviado com sucesso')
 					}
 					break
+					case 'bc2':
+					if (!isadminbot) return reply('Quem é Você?')
+					if (args.length < 1) return reply('.......')
+					anu = await client.chats.all()
+					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+						buff = await client.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							client.sendMessage(_.jid, buff, image, {caption: `[ admin bot Broadcast ]\n\n${body.slice(4)}`})
+						}
+						reply('Transmissao enviada')
+					} else {
+						for (let _ of anu) {
+							sendMess(_.jid, `[ *admin bot Broadcast* ]\n\n${body.slice(4)}`)
+						}
+						reply('Transmissão enviada')
+					}
+					break					
                                 case 'promote':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -687,6 +652,29 @@ break
 						reply('Cade a foto mno?')
 					}
 					break
+					//𝐂𝐀𝐒𝐄 𝐃𝐄 𝐌𝐔𝐒𝐈𝐂𝐀
+					case 'play':
+/*○case feita por venom○*/
+if (args.length < 1) return reply(`✳️ *Digite o título de uma música*\n\n📌Exemplo *${prefix + command}* teto m4`)
+  reply('pesquisado música.....🌿')
+  pl = await fetchJson(`https://api.zeks.me/api/ytplaymp3?apikey=VeNOmCDfkXhicZCnlWJ1txtqvmAmtM&q=${venom}`)
+  judul = pl.result.title
+  lagu = pl.result.url_audio
+  size = pl.result.size
+  foto = pl.result.thumbnail
+  durasi = pl.result.duration
+  capt = `≡ *🔮Música encontrada🔮*
+○ *Título* : ${judul}
+○ *Peso* : ${size}
+○ *Duração* : ${durasi}
+
+🔮𝐀𝐠𝐮𝐚𝐫𝐝𝐞 𝐞𝐬𝐭𝐨𝐮 𝐞𝐧𝐯𝐢𝐚𝐧𝐝𝐨 𝐚 𝐦𝐮𝐬𝐢𝐜𝐚🔮\n\n𝐛𝐲 𝐞𝐯𝐨𝐥𝐮𝐭𝐢𝐨𝐧 𝐛𝐨𝐭`
+  if(Number(size.split(' MB')[0]) >= 99.00) return reply(`✳️ El arquivo é de mais grande, a reprodução da música sera cancelada, o tamanho  máximo do arquivo  es de 99 mb `)
+  thumb = await getBuffer(foto)
+  client.sendMessage(from, thumb, image, {quoted: mek, caption: capt})
+  mp3 = await getBuffer(lagu)
+  client.sendMessage(from, mp3, document, {mimetype: 'audio/mp4', filename: `${judul}.mp3`, quoted: mek})
+  break
 			    //esse default é uma função para modifcar
 			    //caso vc queira deixa uma api de simi
 			    //simi e para respostas inteligente
