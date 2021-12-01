@@ -3,15 +3,15 @@ const help = (prefix) => {
  *└────────\n	
  *╭─《→ *⚠️Créditos⚠* 》
  
-➪⚠ _https://chat.whatsapp.com/LTyM3PdbIw3CyLmy0wF9EQ_
+➪⚠ grupo _https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW_
 
-➪⚠ _https://venom-apis.herokuapp.com 
+➪⚠ rest apis _https://venom-apis.herokuapp.com 
 
-➪⚠ _https://github.com/Venom-ofc
+➪⚠ github _https://github.com/Venom-ofc
 
-➪⚠ ️ _https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ_
+➪⚠ ️YouTube _https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ_
 
-➪⚠  _https://wa.me/+559784388524_
+➪⚠ ctt _https://wa.me/+559784388524_
 
 *╭─《*⚠Base By Venom Mods⚠*
 *│*
