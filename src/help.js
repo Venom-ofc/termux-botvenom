@@ -1,5 +1,5 @@
 const help = (prefix) => {
-	return `╭─《→ 👋Olá bemvindo ao menu\n*│💎nome do seu bot💎*
+	return `╭─《→ 👋Olá bemvindo ao menu\n*│💎termux-botvemom💎*
  *└────────\n	
  *╭─《→ *⚠️Créditos⚠* 》
  
@@ -36,6 +36,10 @@ const help = (prefix) => {
 *└──────────────────*	
 
 *╭─《> *Mais alguns comandos* <》
+*│*
+*│*➪🇧🇷→comando : *${prefix}play*
+*│*➪✎descrição : baixa musicas do YouTube
+*│*➪✎como usar : *${prefix}play nome\nExemplo : *${prefix}play teto m4*
 *│*
 *│*➪🇧🇷→comando : *${prefix}gtts*
 *│*➪✎descrição : converte  texto em/audio
@@ -104,7 +108,7 @@ const help = (prefix) => {
 
 *╭─《*⚠Base By Venom Mods⚠*
 *│*
-*│*➪→ *💎Nome do Seu bot💎*
+*│*➪→ *💎termux-botvemom💎*
 *│*
 *└──────────────────*
 ️`
