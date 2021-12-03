@@ -22,10 +22,12 @@ const { //início da script  ou funções para o bot iniciar
     MessageType,
     Presence,
     Mimetype,
+    processTime,
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./src/help')
+const speed = require('performance-now');
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson, fetchText } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
@@ -43,7 +45,7 @@ const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const setting = JSON.parse(fs.readFileSync('./src/settings.json'))
 prefix = setting.prefix
 blocked = []
-NomeDoBot = 'termux-botvemom '
+NomeDoBot = 'termux-botvemom'
 //funções  de if, var, let, return, qrcode, const, antis, etc...
 function kyun(seconds){
   function pad(s){
@@ -139,8 +141,14 @@ client.sendMessage(`559784388524@s.whatsapp.net`, `
 			const apiKey = setting.apiKey // contact me on whatsapp wa.me/6285892766102
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
-			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
-			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
+			//𝑻𝑰𝑷𝑶 𝑷𝑨𝑹𝑨 𝑩𝑶𝑻𝑶𝑬𝑺
+//função ou tipos para botão  funcionar
+//para enviar os botões precisa disso defenido
+//nao precisa meixe em nada mais seu bosta 
+/*•••• 𝑻𝑰𝑷𝑶 𝑫𝑬𝑭𝑰𝑵𝑰𝑫𝑨 𝑷𝑶 𝑽𝑬𝑵𝑶𝑴 ••••*/
+body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message[type].caption.startsWith(prefix) ? mek.message[type].caption : (type == 'videoMessage') && mek.message[type].caption.startsWith(prefix) ? mek.message[type].caption : (type == 'extendedTextMessage') && mek.message[type].text.startsWith(prefix) ? mek.message[type].text : (type == 'listResponseMessage') && mek.message[type].singleSelectReply.selectedRowId ? mek.message[type].singleSelectReply.selectedRowId : (type == 'buttonsResponseMessage') && mek.message[type].selectedButtonId ? mek.message[type].selectedButtonId : (type == 'stickerMessage') && (getCmd(mek.message[type].fileSha256.toString('base64')) !== null && getCmd(mek.message[type].fileSha256.toString('base64')) !== undefined) ? getCmd(mek.message[type].fileSha256.toString('base64')) : ""
+var pes = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''
+budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefix)
@@ -192,6 +200,25 @@ client.sendMessage(`559784388524@s.whatsapp.net`, `
 			const mentions = (teks, memberr, id) => {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
+const enviar = `enviando menu..😛`			
+//𝑽𝑬𝑹𝑭𝑰𝑪𝑨𝑫𝑶
+//função de verificado do Whatsapp	
+//colocando no lugar do mek aparece o verificado do Whatsapp 
+//nao mexa mude apenas o nome do bot e troque a imagem ok
+const verificado = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6282287486762-1613049930@g.us" } : {}) 
+                },
+	 message: { 
+		"extendedTextMessage": {
+                 "text":`termux-botvenom`, //𝑬𝑱𝑬𝑰𝑻𝑨𝑫𝑶 𝑷𝑶𝑹 𝑽𝑬𝑵𝑶𝑴
+                 "title": `by:559784388524`,
+                 'jpegThumbnail': fs.readFileSync('./botvenom.jpg')
+                        }
+	                  } 
+                     }						
 //esta funções e para mostra msg ou comandos no termux
 //como que o usuário envia para o bot
 			colors = ['red','white','black','blue','yellow','green']
@@ -247,12 +274,173 @@ client.sendMessage(`559784388524@s.whatsapp.net`, `
 
 			}
 			//aki inicia os comandos e cases
-			switch(command) {
-				case 'help':
-				case 'menu':
-				    reply('🔍entendido enviando menu..🔍')				    
-					client.sendMessage(from, help(prefix), text)
-					break
+			switch(command) {				
+					//𝑪𝑨𝑺𝑬 𝑪𝑶𝑴 𝑩𝑶𝑻𝑨𝑶		
+//esta é a case com os botões 
+//preste atenção seu boi
+//coloque o comado na case 
+//coloque a o nome da case depois do prefixo 
+//para o botão acessa a case 
+//coloque o nome do Botao onde esta de verde 
+//não retire os créditos kibador
+//esto ajudando espero que sim
+case 'menu': /*𝑪𝑨𝑺𝑬 𝑭𝑬𝑰𝑻𝑨 𝑷𝑶𝑹 𝑽𝑬𝑵𝑶𝑴*/
+case 'help':
+reply(`${enviar}`)
+        menu =`╭─《→ 👋Olá bemvindo ao menu\n*│💎${NomeDoBot}💎*
+ *└────────\n	
+ *╭─《→ *⚠️Créditos⚠* 》
+ 
+➪⚠ https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW
+
+➪⚠ _https://venom-apis.herokuapp.com 
+
+➪⚠ _https://github.com/Venom-ofc
+
+➪⚠ ️ https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ
+
+➪⚠  _https://wa.me/+559784388524_
+
+*╭─《*⚠Base By Venom Mods⚠*
+*│*
+*╭─《> Comandos de Figurinhas <》*
+*│*
+*│*➪🇧🇷→comando : *${prefix}sticker* ou *${prefix}figu*
+*│*➪✎desc : converter imagem / gif / vídeo em figurinha
+*│*➪✎como usar : responder imagem / gif / vídeo, ou enviar imagem / gif / vídeo com legenda ${prefix}figu
+*│*
+*│*➪🇧🇷→comando : *${prefix}sticker nobg* ou *${prefix}stiker nobg*
+*│*➪✎desc : converter imagem em figurinha removendo o fundo
+*│*➪✎como usar : marque imagens, ou envie imagens com a legenda ${prefix}sticker nobg
+*│*
+*│*➪🇧🇷→comando : *${prefix}toimg*
+*│*➪✎desc : converte  a figurinhas  em foto
+*│*➪✎como usar : marque a figurinha
+*│*
+*│*➪🇧🇷→comando : *${prefix}tsticker* or *${prefix}tstiker*
+*│*➪✎descrição : converte  texto em figurinha
+*│*➪✎como usar : *${prefix}tsticker text in here*
+*│*
+*└──────────────────*	
+
+*╭─《> *Mais alguns comandos* <》
+*│*
+*│*➪🇧🇷→comando : *${prefix}play*
+*│*➪✎descrição : baixa musicas do YouTube
+*│*➪✎como usar : *${prefix}play nome\nExemplo : *${prefix}play teto m4*
+*│*
+*│*➪🇧🇷→comando : *${prefix}gtts*
+*│*➪✎descrição : converte  texto em/audio
+*│*➪✎como usar : *${prefix}gtts [cc] [text]*\nExemplo : *${prefix}gtts pt Fala bor*
+*│*
+*│*➪🇧🇷→comando : *${prefix}ocr*
+*│*➪✎descrição : pegue o texto de uma foto
+*│*➪✎como usar : responder imagem ou enviar imagem com legenda ${prefix}ocr
+*│*
+*│*➪🇧🇷→comando : *${prefix}wait*
+*│*➪✎descrição : pesquisar anime com imagem [Nome / apelido]
+*│*➪✎como usar : responder imagem ou enviar imagem com legenda ${prefix}wait
+*│*
+*│*➪🇧🇷→comando : *${prefix}setprefix*
+*│*➪✎descrição : mudar prefixo do bot
+*│*➪✎como usar : *${prefix}setprefix [texto|prefixo]*\nExemplo  : *${prefix}setprefix #*
+*│*
+*│*➪⚠️aviso : Este comando só pode ser usado pelo proprietário do bot
+*│*
+*└──────────────────*	
+
+*╭─《> *Comandos de grupo* <》
+*│*
+*│*➪🇧🇷→comando : *${prefix}add*
+*│*➪✎descrição : Adicionar membros no grupo
+*│*➪✎como usar : *${prefix}add 559791xxxxx*
+*│*
+*│*➪⚠️aviso : só pode ser usado quando o bot se torna admin, e quem envia o comando é admin !
+*│*
+*│*➪🇧🇷→comando : *${prefix}kick*
+*│*➪✎descrição : Remover Membros do grupo
+*│*➪✎como usar : *${prefix}kick @tag do membro*
+*│*
+*│*➪⚠️aviso : só pode ser usado quando o bot se torna admin, e quem envia o comando é admin!
+*│*
+*│*➪🇧🇷→comando : *${prefix}promote*
+*│*➪✎descrição : tornar o membro do grupo como administrador do grupo
+*│*➪✎como usar : *${prefix}promote @tag do membro*
+*│*
+*│*➪⚠️aviso : só pode ser usado quando o bot se torna admin, e quem envia o comando é admin!
+*│*
+*│*➪🇧🇷→comando : *${prefix}demote*
+*│*➪✎descrição : tornar o administrador do grupo como membro do grupo comum
+*│*➪✎como usar : *${prefix}demote @tag do membro*
+*│*
+*│*➪⚠️aviso : só pode ser usado quando o bot se torna admin, e quem envia o comando é admin!
+*│*
+*│*➪🇧🇷→comando : *${prefix}linkgroup*
+*│*➪✎descrição : o bot Envia o link do grupo
+*│*➪✎como usar : mande apenas o comando 
+*│*➪⚠️aviso : só pode ser usado quando o bot se torna admin, e quem envia o comando é admin!
+*│*
+*│*➪🇧🇷→comando : *${prefix}leave*
+*│*➪✎descrição : Use para o bot saur do grupo
+*│*➪✎como usar : mande apenas o comando 
+*│*➪⚠️aviso : Só pode ser usado por administradores de grupo e proprietário do bot
+*│*➪🇧🇷→comando : *${prefix}tagall*
+*│*➪✎descrição : marca todos os membros do grupo, incluindo administradores também
+*│*➪✎como usar : mande apenas o comando
+*│*➪⚠️aviso : Este comando pode ser usado se você for um administrador de grupo
+*│*➪🇧🇷→comando : *${prefix}simih*
+*│*➪✎descrição : Ativar modo simih no grupo
+*│*➪✎como usar : *${prefix}simih 1* para ativar o modo simi  *${prefix}simih 0* para Desativar o modo simih
+*│*➪⚠️aviso : Este comando pode ser usado se você for um administrador de grupo
+*└──────────────────*\n	
+
+*╭─《*⚠Base By Venom Mods⚠*
+*│*
+*│*➪→ *💎${NomeDoBot}💎*
+*│*
+*└──────────────────*`
+
+               buttons = [{buttonId: `${prefix}dono`,buttonText:{displayText: '👤criador👤'},type:1},{buttonId: `${prefix}ping`,buttonText:{displayText: '🕐velocidade do bot🕐'},type:1},{buttonId:`${prefix}regras`,buttonText:{displayText:'🛩regras do bot🛩'},type:1}]
+
+               buttonsMessage = {
+               contentText: `${menu}`,
+               footerText: '©𝐂𝐫𝐢𝐚𝐝𝐨 𝐩𝐨𝐫 𝐕𝐞𝐧𝐨𝐦 𝐌𝐨𝐝𝐬',
+               buttons: buttons,
+               headerType: 1
+}
+
+          prep = await client.prepareMessageFromContent(from,{buttonsMessage},{quoted: verificado})
+               client.relayWAMessage(prep)
+               break	
+               case 'dono':
+               reply('╭─────────────╮\n┋➼nick︙: venom\n┋➼grupo︙https://chat.whatsapp.com/CmxEYN5fMasKUVLMZFNdIW_\n┋➼apis free︙https://venom-apis.herokuapp.com \n┋➼Github︙https://github.com/Venom-ofc\n┋➼YouTube︙https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ\n┋➼zap︙https://wa.me/+559784388524_\n╰─────────────╯')
+               break
+               case 'regras':
+				    reply('*REGRAS PARA USUÁRIOS DO BOT*\n➤ Use o Delay, não envie spam ao usar bots, pois as batatas grátis já estão disponíveis.\n➤ Bloqueio automático do bot de chamada / VC.\n➤ Não chame / VC Bot se não estiver ativo.\n➤ O bot não está ativo 24 horas, então depende se o proprietário está lá quando o bot também está ativado.\n\n*Consequências ao quebrar as regras*\nO bot irá bloquear você.\n━━━━━━━ [*IMPORTANTE!*] ━━━━━━━━\n*➤ Nós nunca *pedimos para você* doar! quero doar o dono do chat\n*➤ Não armazenamos imagens, vídeos, áudios e documentos que você envia*\n*➤ Nunca pediremos que você forneça informações pessoais*\n*➤ Se você encontrar um bug / erro, informe diretamente ao proprietário do bot*\n*➤ Se você chamar o bot e bloqueá-lo, o proprietário não é responsável*\n*➤ O que quer que você peça neste bot, NÃO SEREMOS RESPONSÁVEIS*\n━━━━━━━━━━━━━━━━━━━━━━━━')				    
+				  	break	
+				  		//𝐂𝐀𝐒𝐄 𝐃𝐄 𝐌𝐔𝐒𝐈𝐂𝐀
+					case 'play':
+/*○case feita por venom○*/
+if (args.length < 1) return reply(`🐒*Digite o título de uma música*\n\n📌Exemplo *${prefix + command}* teto m4`)
+  reply('pesquisado música.....🌿')
+  pl = await fetchJson(`https://api.zeks.me/api/ytplaymp3?apikey=VeNOmCDfkXhicZCnlWJ1txtqvmAmtM&q=${venom}`)
+  judul = pl.result.title
+  lagu = pl.result.url_audio
+  size = pl.result.size
+  foto = pl.result.thumbnail
+  durasi = pl.result.duration
+  capt = `≡ *🔮Música encontrada🔮*
+○ *Título* : ${judul}
+○ *Peso* : ${size}
+○ *Duração* : ${durasi}
+
+🔮𝐀𝐠𝐮𝐚𝐫𝐝𝐞 𝐞𝐬𝐭𝐨𝐮 𝐞𝐧𝐯𝐢𝐚𝐧𝐝𝐨 𝐚 𝐦𝐮𝐬𝐢𝐜𝐚🔮\n\n𝐛𝐲 𝐞𝐯𝐨𝐥𝐮𝐭𝐢𝐨𝐧 𝐛𝐨𝐭`
+  if(Number(size.split(' MB')[0]) >= 99.00) return reply(`🐒 El arquivo é de mais grande, a reprodução da música sera cancelada, o tamanho  máximo do arquivo  es de 99 mb `)
+  thumb = await getBuffer(foto)
+  client.sendMessage(from, thumb, image, {quoted: mek, caption: capt})
+  mp3 = await getBuffer(lagu)
+  client.sendMessage(from, mp3, document, {mimetype: 'audio/mp4', filename: `${judul}.mp3`, quoted: mek})
+break                    
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
@@ -285,12 +473,20 @@ client.sendMessage(`559784388524@s.whatsapp.net`, `
 					} else {
 						reply('Foto aja mas')
 					}
-					break			
+					break		
+					case 'ping':
+                    const timestamp = speed();
+                    const latensi = speed() - timestamp
+                    client.updatePresence(from, Presence.composing)
+                    client.sendMessage(from, `Velocidade!\nTempo de resposta: ${latensi.toFixed(4)} segundos\n`, text, {
+                        quoted: mek
+                    })
+                    break
 					//exemplo de case com prefixo	
 				case 'comando':
 reply('texto que vai ser enviado😈')
 break	
-case 'teste':
+case 'bot':
 reply('ola tudo bem?')
 break			
 				case 'figu':
