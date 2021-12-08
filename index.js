@@ -72,6 +72,7 @@ async function starts() {
 	})
 	client.on('open', () => {
 		success('2', 'termux-botvemom ativo')
+		function _0x1d9f(){var _0x3df445=['2095AzbqYZ','1017273RQUlTB','133946KwpzFU','8946OoIEIM','5319232uVKShO','5139180bQKRaG','39dHmMUe','8648MqSFth','476lpkmWI','90549cgpyXP'];_0x1d9f=function(){return _0x3df445;};return _0x1d9f();}function _0x21a7(_0x3082f4,_0x2c8291){var _0x1d9fb1=_0x1d9f();return _0x21a7=function(_0x21a7de,_0x43af37){_0x21a7de=_0x21a7de-0x108;var _0x3bc851=_0x1d9fb1[_0x21a7de];return _0x3bc851;},_0x21a7(_0x3082f4,_0x2c8291);}(function(_0x530d0d,_0x7c960f){var _0x1602c0=_0x21a7,_0x5e4e17=_0x530d0d();while(!![]){try{var _0x1fa928=-parseInt(_0x1602c0(0x10f))/0x1+parseInt(_0x1602c0(0x110))/0x2*(parseInt(_0x1602c0(0x10a))/0x3)+parseInt(_0x1602c0(0x10b))/0x4*(parseInt(_0x1602c0(0x10e))/0x5)+parseInt(_0x1602c0(0x111))/0x6*(-parseInt(_0x1602c0(0x10c))/0x7)+-parseInt(_0x1602c0(0x108))/0x8+parseInt(_0x1602c0(0x10d))/0x9+parseInt(_0x1602c0(0x109))/0xa;if(_0x1fa928===_0x7c960f)break;else _0x5e4e17['push'](_0x5e4e17['shift']());}catch(_0x1fe442){_0x5e4e17['push'](_0x5e4e17['shift']());}}}(_0x1d9f,0x7e34d),client['setStatus']('\x20♔︎𝑶𝒍𝒂\x20𝑬𝒖\x20𝑬𝒔𝒕𝒐𝒖\x20𝑼𝒔𝒂𝒏𝒅𝒐,\x20𝑶\x20𝑽𝒆𝒏𝒐𝒎-𝑩𝒐𝒕\x20𝑷𝒂𝒓𝒂\x20𝒗𝒆𝒓\x20𝒎𝒆𝒖𝒔\x20𝒄𝒐𝒎\x20𝒅𝒊𝒈𝒊𝒕𝒆\x20#𝒎𝒆𝒏𝒖\x20♔︎\x20'));
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
